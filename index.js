@@ -36,8 +36,7 @@ function pad(val) {
     return String(val).padStart(2, '0')
 }
 
-function insertValues(timerEl) {
-    const { days, hours, mins, secs } = timerEl
+function insertValues({ days, hours, mins, secs }) {
     daysVal.textContent = days
     hoursVal.textContent = hours
     minsVal.textContent = mins
@@ -45,9 +44,7 @@ function insertValues(timerEl) {
 }
 
 function clearMarkup() {
-    const { days, hours, mins, secs } = timerEl
-    daysVal.textContent = '00'
-    hoursVal.textContent = '00'
-    minsVal.textContent = '00'
-    secsVal.textContent = '00'
-  }
+   insertValues({ days: '00', hours: '00', mins: '00', secs: '00' })
+}
+  
+// console.log(clearMarkup)
